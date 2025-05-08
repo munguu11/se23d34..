@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Номын Вэб</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slider-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .slide-track {
+            display: flex;
+            width: calc(300px * 8);
+            animation: scroll 20s linear infinite;
+        }
+
+        .slide {
+            width: 300px;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%);}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">📚 Номын Вэб</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Нүүр</a></li>
+                <li><a href="about.html">Танилцуулга</a></li>
+                <li><a href="books.html">Номын жагсаалт</a></li>
+                <li><a href="information.html">Шинэ номнууд</a></li>
+                <li><a href="contact.html">Холбоо барих</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Ном бол ертөнцийг харах цонх юм</h1>
+        <p>Миний уншсан, санал болгох дуртай номуудыг эндээс олж үзээрэй.</p>
+    </section>
+
+    <section class="slider-section">
+        <div class="slide-track">
+            <div class="slide"><img src="zurag-11.jpg" alt="Зураг-1"></div>
+            <div class="slide"><img src="zurag-12.jpg" alt="Зухаг-2"></div>
+            <div class="slide"><img src="zurag-13.jpg" alt="Зураг-3"></div>
+            <div class="slide"><img src="zurag-14.jpg" alt="Зураг-4"></div>
+
+            <div class="slide"><img src="zurag-11.jpg" alt="Зураг-1"></div>
+            <div class="slide"><img src="zurag-12.jpg" alt="Зураг-2"></div>
+            <div class="slide"><img src="zurag-13.jpg" alt="Зураг-3"></div>
+            <div class="slide"><img src="zurag-14.jpg" alt="Зураг-4"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Номын Вэб. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+  
+
+
+
+
+
+
+

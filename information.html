@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Шинэ Ном - Номын Вэб</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .carousel-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .carousel-buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .carousel-buttons button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 25px;
+            background-color: #cce7ff;
+            color: #004080;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: #99d1ff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📚 Номын Вэб</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Нүүр</a></li>
+        <li><a href="about.html">Танилцуулга</a></li>
+        <li><a href="books.html">Номын жагсаалт</a></li>
+        <li><a href="information.html">Шинэ Номнууд</a></li>
+        <li><a href="contact.html">Холбоо барих</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Шинэ номын мэдээлэл</h2>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+
+            <div class="carousel-item">
+                <h3>Хот ба түүний тодорхойгүй хэрмүүд</h3>
+                <p><strong>Зохиолч:</strong> Харуки Мураками</p>
+                <img src="zurag-1.jpg" alt="Мураками">
+                <p><strong>Товч танилцуулга:</strong> Энэ ном нь сэтгэл зүйн эдгээх үйл явцад анхаарлаа хандуулсан бөгөөд амьдралын гүн гүнзгий асуултуудыг хөнддөг.</p>
+                <p><strong>Унших зөвлөмж:</strong> Сэтгэл зүйн хөгжлийг ойлгохыг хүссэн хүмүүст зориулагдсан, энгийн боловч гүн сэтгэлгээ шаардсан ном юм.</p>
+            </div>
+
+            <div class="carousel-item">
+                <h3>Хайрын сүмээс дүрвэгсэд</h3>
+                <p><strong>Зохиолч:</strong> Л. Өлзийтөгс</p>
+                <img src="zurag-2.jpg" alt="Өлзийтөгс">
+                <p><strong>Товч танилцуулга:</strong> Энэ ном нь гэр бүл, амьдралын утга учир, хүний амьдралыг харуулсан түүх юм.</p>
+                <p><strong>Унших зөвлөмж:</strong> Амьдралын асуудлуудыг даван туулах, замаа олоход тусалдаг ном.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="carousel-buttons">
+        <button onclick="prevSlide()">⟵ Өмнөх</button>
+        <button onclick="nextSlide()">Дараах ⟶</button>
+    </div>
+
+</section>
+
+<footer>
+    &copy; 2025 Номын Вэб. Бүх эрх хуулиар хамгаалагдсан.
+</footer>
+
+<script>
+    const slide = document.querySelector('.carousel-slide');
+    const items = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        if (index < 0) {
+            currentIndex = items.length - 1;
+        } else if (index >= items.length) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        slide.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+</script>
+
+</body>
+</html>

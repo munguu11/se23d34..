@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Номын жагсаалт - Номын Вэб</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">📚 Номын Вэб</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Нүүр</a></li>
+                <li><a href="about.html">Танилцуулга</a></li>
+                <li><a href="books.html">Номын жагсаалт</a></li>
+                <li><a href="information.html">Шинэ номнууд</a></li>
+                <li><a href="contact.html">Холбоо барих</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="books-section">
+        <h1>Миний санал болгох номууд</h1>
+
+        <div class="tab-buttons">
+            <button onclick="openTab('lit')">Уран зохиол</button>
+            <button onclick="openTab('poem')">Шүлгийн ном</button>
+            <button onclick="openTab('self')">Хувь хүний хөгжил</button>
+        </div>
+
+        <div id="lit" class="tab-content">
+            <div class="book-item">
+                <h2>Норвегийн ой (Харүки Мураками)</h2>
+                <p>Хайр дурлал, уйтгар гунигийн тухай гардаг гайхалтай бүтээл.</p>
+            </div>
+            <div class="book-item">
+                <h2>Кофе хөрөхөөс өмнө (Тошиказү Кавагүчи)</h2>
+                <p>Цаг хугацаагаар аялах тухай ухаарал төрүүлэм өгүүллэгүүд.</p>
+            </div>
+        </div>
+
+        <div id="poem" class="tab-content" style="display:none;">
+            <div class="book-item">
+                <h2>Үзэхийн хязгаар (Л.Өлзийтөгс)</h2>
+                <p>Гүн ухаан, хайрын тухай шүлгүүдийн цоморлиг.</p>
+            </div>
+        </div>
+
+        <div id="self" class="tab-content" style="display:none;">
+            <div class="book-item">
+                <h2>Алтан Од (Пауло Коэльо)</h2>
+                <p>Мөрөөдлийнхөө араас хэрхэн зоригтой явахыг харуулсан түүх.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2025 Номын Вэб | Бүх эрх хуулиар хамгаалагдсан
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            const contents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+
